@@ -4,12 +4,14 @@
 from what import *
 from operations import *
 from calcul import *
-from csv import *
+from files import *
 from sort import *
 
 print("Entrez les montants, les dates et les modes de paiement dans l'ordre que vous voulez :\n")
 
-actfile = "../Accounts/" + whatfile()
+with open("ACCOUNTS_PATH.txt", "r", encoding="utf-8") as _file:
+    actfile = _file.readline().strip("\n") + "\\" + whatfile()
+
 list_accounts = reader(actfile) # lecture du fichier où se trouvent les comptes
 
 # on ne garde que les lignes de 'comptes'
@@ -117,4 +119,4 @@ list_accounts[1:1] = [["", ""]]
 list_accounts[2:2] = [["Date", "Mode", "Montant"]]
 
 writer(actfile, list_accounts)
-print("Fait.")
+input("Fait.") # Pause
