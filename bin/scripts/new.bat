@@ -1,16 +1,18 @@
-set ACCOUNTS_PATH=C:\Users\Rudie\Desktop\Accounts 
-cd %ACCOUNTS_PATH%
+@echo off
+set /p ACCOUNTS_PATH= < ../src/ACCOUNTS_PATH.txt
+echo %ACCOUNTS_PATH%
 
 set /p filename=Nom du nouveau fichier : 
 set /p dep=Montant de depart : 
 
-echo Depart;%dep% > .\%filename%.csv
-echo ; >> .\%filename%.csv
-echo Date;Mode;Montant >> .\%filename%.csv
-echo ; >> .\%filename%.csv
-echo Total;%dep% >> .\%filename%.csv
+echo Depart;%dep% > %ACCOUNTS_PATH%/%filename%.csv
+echo ; >> %ACCOUNTS_PATH%/%filename%.csv
+echo Date;Mode;Montant >> %ACCOUNTS_PATH%/%filename%.csv
+echo ; >> %ACCOUNTS_PATH%/%filename%.csv
+echo Total;%dep% >> %ACCOUNTS_PATH%/%filename%.csv
 
-echo %filename%.csv > "NE PAS SUPPRIMER\actfile.txt" 
+REM On se trouve dans le même répertoire que ah.bat (../)
+echo %filename%.csv > ../src/actfile.txt 
 echo %filename%.csv cree.
 
 pause > nul
