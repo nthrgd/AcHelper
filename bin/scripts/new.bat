@@ -1,6 +1,5 @@
 @echo off
 set /p ACCOUNTS_PATH= < ../src/ACCOUNTS_PATH.txt
-echo %ACCOUNTS_PATH%
 
 set /p filename=Nom du nouveau fichier : 
 set /p dep=Montant de depart : 

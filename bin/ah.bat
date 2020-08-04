@@ -7,7 +7,7 @@ if %op%==nouv set new=1
 if %op%==nouveau set new=1
 
 if %new%==1 (
-	scripts/new.bat
+	scripts\new.bat
 )
 
 echo Fin.
