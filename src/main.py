@@ -119,4 +119,4 @@ list_accounts[1:1] = [["", ""]]
 list_accounts[2:2] = [["Date", "Mode", "Montant"]]
 
 writer(actfile, list_accounts)
-input("Fait.") # Pause
+print("Fait.")
