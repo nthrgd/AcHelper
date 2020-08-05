@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 #_*_ coding: utf-8 -*-
 
-from what import whatis, whatdate, whatmode
+from what import whatis
 from copy import copy
+from date import Date
+from mode import Mode
 
 def operror(op):
     print(f"Il est impossible d'utiliser la fonction '{op}' de cette manière. 'accountshelper/doc.txt' pour plus d'informations.")
@@ -24,19 +26,26 @@ def add(line, list_accounts, previous_settings):
         print("Vous avez entrez des informations non attendues.")
 
 
+
     # Vérification de la date
     if line_isvalid and settings["date"]:
-        date = settings["date"].split("/")
-        while "" in date:
-            date.remove("")
+        date = Date(settings["date"])
+        if date.whatdate():
+            settings["date"] = date.whatdate()
+        else:
+            line_isvalid = False
+            print("\nLa date '{}' est invalide.\n".format(date.value))
 
-        for e in date:
-            if not e.isdigit():
-                print("La date n'est pas écrite correctement")
-                line_isvalid = False
-                break
-        if line_isvalid:
-            settings["date"] = whatdate(settings["date"])
+    # Détection du mode de paiement
+    if line_isvalid and settings["mode"]:
+        mode = Mode(settings["mode"])
+        if mode.whatmode() != "UNKNOW":
+            settings["mode"] = mode.whatmode()
+        else:
+            line_isvalid = False
+            print("\nLe mode de paiement '{}' n'est pas reconnu.\n".format(mode.value))
+
+
 
     # Autocomplétion de la saisie si nécéssaire
     if len(line) < 3 and len(previous_settings) == 3:
@@ -44,25 +53,15 @@ def add(line, list_accounts, previous_settings):
             if not v:
                 settings[k] = previous_settings[k]
     elif len(line) < 3 and len(previous_settings) < 3:
-        print("Vous devez entrez plus d'information pour cette ligne.")
+        print("\nVous devez entrez plus d'information pour cette ligne.\n")
         line_isvalid = False
 
     if line_isvalid:
         for v in settings.values():
             if not v:
-                print("Un type d'information a été entré plusieurs fois au lieu d'un autre.")
+                print("\nUn type d'information a été entré plusieurs fois au lieu d'un autre.\n")
                 line_isvalid = False
                 break
-
-
-    # DÃ©tection du mode de paiement
-    if line_isvalid:
-        mode = whatmode(settings["mode"])
-        if mode != "UNKNOW":
-            settings["mode"] = mode
-        else:
-            print("Le mode de paiement n'est pas reconnu.")
-            line_isvalid = False
 
 
     if line_isvalid:

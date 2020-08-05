@@ -27,7 +27,7 @@ class Date:
                 if not date[i].isdigit() or len(date[i]) > 2:
                     return False
                 if i == 0:
-                    if len(date) > 1:
+                    if len(date) > 1 and len(date[1]) < 3:
                         if not 0 < int(date[0]) <= Date.days_per_month[int(date[1])]:
                             return False
                     else:
@@ -38,19 +38,24 @@ class Date:
                         return False
             # Année
             else:
-                if not date[i].isdigit():
+                if not date[i].isdigit() or len(date[2]) > 4:
                     return False
 
         return True
 
 
 
-    def __init__(self, strf):
-        self.date = None
+    def __init__(self, value):
+        self.value = value
 
-        if Date.isvalid(strf):
+
+    def whatdate(self):
+        """
+        Complète et formatte une date si celle-ci est valide.
+        """
+        if Date.isvalid(self.value):
             today = datetime.now()
-            strf = strf.split("/")
+            strf = self.value.split("/")
             while "" in strf:
                 strf.remove("")
 
@@ -69,4 +74,4 @@ class Date:
             if len(strf[2]) < 4:
                 strf[2] = str(today.year)[:4 - len(strf[2])] + strf[2]
 
-            self.date = "/".join(strf)
+            return "/".join(strf)

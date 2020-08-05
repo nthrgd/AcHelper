@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from what import modes
+from mode import Mode
 
 def calcul_total(dep, list_accounts):
     total = dep
@@ -9,10 +9,10 @@ def calcul_total(dep, list_accounts):
         date, mode, montant = list_accounts[i]
         if mode == "VIREMENT":
             total += float(montant)
-        elif mode in modes:
+        elif mode in Mode.modes:
             total -= float(montant)
         else:
-            print(f"INFO: Le mode de paiement '{mode}' (ligne {i + 1}) " + \
-                  "n'est pas reconnu donc cette ligne n'est pas prise en " + \
+            print(f"INFO: Le mode de paiement '{mode}' (ligne {i + 1})", \
+                  "n'est pas reconnu donc cette ligne n'est pas prise en", \
                   "compte dans le calcul du total.")
     return total
