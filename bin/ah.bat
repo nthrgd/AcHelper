@@ -19,5 +19,13 @@ if %new%==1 (
 	scripts\new.bat
 )
 
+set refresh=0
+if %op%==r set refresh=1
+if %op%==refresh set refresh=1
+
+if %refresh%==1 (
+	scripts\refresh.bat
+)
+
 echo Fin.
 pause > nul
