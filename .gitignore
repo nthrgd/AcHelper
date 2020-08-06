@@ -1,2 +1,2 @@
-config/*
+config/*.txt
 src/__pycache__/*
