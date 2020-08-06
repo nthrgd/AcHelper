@@ -11,7 +11,9 @@ echo ; >> %ACCOUNTS_PATH%/%filename%.csv
 echo Total;%dep% >> %ACCOUNTS_PATH%/%filename%.csv
 
 REM On se trouve dans le même répertoire que ah.bat (../)
-echo %filename%.csv > ../src/actfile.txt 
+cd ../src
+python ./levy_manager.py
+echo %filename%.csv > ./actfile.txt 
 echo %filename%.csv cree.
 
 pause > nul
