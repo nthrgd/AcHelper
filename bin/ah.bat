@@ -27,5 +27,12 @@ if %refresh%==1 (
 	scripts\refresh.bat
 )
 
+set version=0
+if %op%==v set version=1
+if %op%==version set version=1
+if %version%==1 (
+	scripts\version.bat
+)
+
 echo Fin.
 pause > nul
