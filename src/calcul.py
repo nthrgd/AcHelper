@@ -3,13 +3,14 @@
 
 from mode import Mode
 
-def calcul_total(dep, list_accounts):
+def calcul_total(dep, list_accounts, modes=[]):
+    modes += Mode.modes
     total = dep
     for i in range(len(list_accounts)):
         date, mode, montant = list_accounts[i]
         if mode == "VIREMENT":
             total += float(montant)
-        elif mode in Mode.modes:
+        elif mode in modes:
             total -= float(montant)
         else:
             print(f"INFO: Le mode de paiement '{mode}' (ligne {i + 1})", \
