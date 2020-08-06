@@ -75,3 +75,12 @@ class Date:
                 strf[2] = str(today.year)[:4 - len(strf[2])] + strf[2]
 
             return "/".join(strf)
+
+
+    def get_longformat(self):
+        """
+        Retourne un entier qui représente la date avec le format AAAAMMJJ.
+        Cette méthode doit uniquement être utilisée sur des dates valides.
+        """
+        date = self.whatdate().split("/")[::-1]
+        return int("".join(date))
