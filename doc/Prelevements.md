@@ -10,6 +10,7 @@ Les prélèvements s'indiquent de la manière suivante :
 Cette ordre doit être respecté pour que AcHelper puisse reconnaître chaque information.
 Vous pouvez indiquer autant de prélèvements que vous le souhaitez mais vous ne pouvez pas
 indiquer plus de 1 prélèvement par ligne.
+! AUCUNE LIGNE NE DOIT ETRE VIDE !
 
 (Il n'est pas nécéssaire d'indiquer les prélèvements dans l'ordre chronologique, il seront de toutes
 façon triés.)
