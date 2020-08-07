@@ -7,7 +7,7 @@ from sort import *
 import files
 
 def refresh(modes=[], verbose=0):
-    with open("ACCOUNTS_PATH.txt", "r", encoding="utf-8") as _file:
+    with open("../config/ACCOUNTS_PATH.txt", "r", encoding="utf-8") as _file:
         accounts_path = _file.readline().strip("\n") + "\\"
 
     actfile = whatfile()

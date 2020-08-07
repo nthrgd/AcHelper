@@ -9,7 +9,7 @@ from sort import *
 
 print("Entrez les montants, les dates et les modes de paiement dans l'ordre que vous voulez :\n")
 
-with open("ACCOUNTS_PATH.txt", "r", encoding="utf-8") as _file:
+with open("../config/ACCOUNTS_PATH.txt", "r", encoding="utf-8") as _file:
     actfile = _file.readline().strip("\n") + "\\" + whatfile()
 
 list_accounts = reader(actfile) # lecture du fichier où se trouvent les comptes
