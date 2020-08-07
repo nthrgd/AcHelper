@@ -1,5 +1,5 @@
 @echo off
-set /p ACCOUNTS_PATH= < ../src/ACCOUNTS_PATH.txt
+set /p ACCOUNTS_PATH= < ../config/ACCOUNTS_PATH.txt
 
 set /p filename=Nom du nouveau fichier : 
 set /p dep=Montant de depart : 
@@ -13,7 +13,7 @@ echo Total;%dep% >> %ACCOUNTS_PATH%/%filename%.csv
 REM On se trouve dans le même répertoire que ah.bat (../)
 cd ../src
 python ./levy_manager.py
-echo %filename%.csv > ./actfile.txt 
+echo %filename%.csv > ../config/actfile.txt 
 echo %filename%.csv cree.
 
 pause > nul

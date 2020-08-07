@@ -2,7 +2,7 @@
 #-*- coding: utf-8 -*-
 
 def whatfile():
-    with open("actfile.txt", "r", encoding="utf-8") as file:
+    with open("../config/actfile.txt", "r", encoding="utf-8") as file:
         return file.readline().strip("\n")
 
 def whatis(seizure):
