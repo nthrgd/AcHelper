@@ -1,4 +1,11 @@
 @echo off
+REM On commence par vérifier si la configuration a déjà été faite
+set /p ACCOUNTS_PATH= < ../config/ACCOUNTS_PATH.txt
+
+if %ACCOUNTS_PATH%==null (
+	scripts\configure.bat
+)
+
 set /p op=Choissisez le mode que vous souhaitez : 
 
 set modify=0
