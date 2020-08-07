@@ -12,8 +12,8 @@ echo Total;%dep% >> %ACCOUNTS_PATH%/%filename%.csv
 
 REM On se trouve dans le même répertoire que ah.bat (../)
 cd ../src
-python ./levy_manager.py
 echo %filename%.csv > ../config/actfile.txt 
+python ./levy_manager.py
 echo %filename%.csv cree.
 
 pause > nul
