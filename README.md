@@ -15,8 +15,8 @@ En effet, il contient plusieurs fonctionnalités utiles qui vous ferons gagner d
 correcteur automatique pour le mode de paiement, gestion automatique des prélevements, ...)
 
 
-Si vous utilisez AcHelper pour la première fois, veuillez exécuter le fichier configure.bat et répondre aux questions posées.
-Sinon, lancez AcHelper en exécutant le fichier bin/ah.bat.
+Si vous utilisez AcHelper pour la première fois, il vous demandera d'entrer le chemin d'accès de l'emplacement où
+vous souhaitez stocker vos comptes, sinon :
 
 Plusieurs modes s'offrent à vous :
 
