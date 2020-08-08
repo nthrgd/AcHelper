@@ -2,7 +2,7 @@
 REM On commence par vérifier si la configuration a déjà été faite
 set /p ACCOUNTS_PATH= < ../config/ACCOUNTS_PATH.txt
 
-if %ACCOUNTS_PATH%==null (
+if "%ACCOUNTS_PATH%"=="" (
 	scripts\configure.bat
 )
 

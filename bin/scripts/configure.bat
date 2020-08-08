@@ -1,9 +1,12 @@
 @echo off
 set /p accounts_path=Entrez le chemin d'acces de l'emplacement ou vous souhaitez stocker vos tableaux : 
 
-md %accounts_path%/Comptes
-md "%accounts_path%/Comptes/NE PAS SUPPRIMER"
-type > "%accounts_path%/Comptes/NE PAS SUPPRIMER/Prelevements.txt"
-echo %accounts_path%\Comptes> ../config/accounts_path.txt
+set /p empty= < ..\config\accounts_path.txt
+md %accounts_path%\Comptes
+md "%accounts_path%\Comptes\NE PAS SUPPRIMER"
+type nul > "%accounts_path%\Comptes\NE PAS SUPPRIMER\Prelevements.txt"
+echo %accounts_path%\Comptes> ..\config\accounts_path.txt
 
+echo ...
+echo Si aucun message d'erreur n'a ete affiche, AcHelper est correctement configure !
 pause > nul
