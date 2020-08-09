@@ -7,7 +7,7 @@ from refresh import refresh
 
 with open("../config/ACCOUNTS_PATH.txt", "r", encoding="utf-8") as _file:
     accounts_path = _file.readline().strip("\n")
-levysfile = accounts_path + "/NE PAS SUPPRIMER/Prelevements.txt"
+levysfile = accounts_path + "/NE PAS SUPPRIMER/Prélèvements.txt"
 
 actfile = accounts_path + "/" + whatfile()
 

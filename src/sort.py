@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from copy import deepcopy
 from datetime import datetime
 from date import Date
