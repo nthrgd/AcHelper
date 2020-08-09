@@ -4,10 +4,10 @@ if [ ! -e ../config/accounts_path.txt ]; then
 	touch ../config/accounts_path.txt
 fi
 
-ACCOUNTS_PATH=$(cat ../config/accounts_path.txt)
+accounts_path=$(cat ../config/accounts_path.txt)
 cd scripts
 
-if [ "$ACCOUNTS_PATH" == "" ]; then
+if [ "$accounts_path" == "" ]; then
 	./configure.sh
 	exit
 fi
