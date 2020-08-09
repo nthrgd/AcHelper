@@ -5,7 +5,7 @@ AcHelper
 ! AcHelper est encore en développement, il est donc normal qu'il soit incomplet et que le code ne soit pas forcément optimal. !
 
 
-AcHelper est un petit projet compatible avec Windows (bientôt Linux) ayant pour but d'aider ses utilisateurs à faire
+AcHelper est un petit projet compatible avec Windows (bientôt GNU/Linux) ayant pour but d'aider ses utilisateurs à faire
 leurs comptes plus rapidement.
 
 Une des pricipales raisons de sa création est la volonté m'améliorer en programmation et tester des choses. 
