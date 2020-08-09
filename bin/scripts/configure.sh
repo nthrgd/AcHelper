@@ -7,8 +7,8 @@ read accounts_path
 mkdir $accounts_path/Comptes
 mkdir "$accounts_path/Comptes/NE PAS SUPPRIMER"
 mkdir "$accounts_path/Comptes/NE PAS SUPPRIMER/Aide"
-cp ../../doc/Prelevements.md "$accounts_path/Comptes/NE PAS SUPPRIMER/Aide"
-cp ../../doc/ModeModifier.md "$accounts_path/Comptes/NE PAS SUPPRIMER/Aide"
+cp ../../Documentation/Prelevements.md "$accounts_path/Comptes/NE PAS SUPPRIMER/Aide"
+cp ../../Documentation/ModeModifier.md "$accounts_path/Comptes/NE PAS SUPPRIMER/Aide"
 
 
 touch "$accounts_path/Comptes/NE PAS SUPPRIMER/Prélèvements.txt"
