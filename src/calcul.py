@@ -2,8 +2,8 @@
 
 from mode import Mode
 
-def calcul_total(dep, list_accounts, modes=[]):
-    modes += Mode.modes
+def calcul_total(dep, list_accounts):
+    modes = Mode.modes
     total = dep
     for i in range(len(list_accounts)):
         date, mode, montant = list_accounts[i]

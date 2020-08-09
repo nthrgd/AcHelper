@@ -6,6 +6,15 @@ class Mode:
         self.value = value
 
     modes = ["CB", "CHEQUE", "VIREMENT", "RETRAIT"]
+    # Ajout des 'auteurs' des prélèvements dans la liste des modes de paiement
+    with open("../config/accounts_path.txt", "r", encoding="utf-8") as _file:
+        accounts_path = _file.readline().strip("\n") 
+        with open(accounts_path + "/NE PAS SUPPRIMER/Prélèvements.txt", "r", encoding="utf-8") as _file2:
+            for line in _file2.readlines():
+                line = line.split(":")
+                mode = line[1].strip("\n").replace(" ", "").upper()
+                modes.append(mode)
+
 
     def whatmode(self):
         mode = self.value.upper()
