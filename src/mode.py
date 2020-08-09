@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 class Mode:
     """
     Définit un mode de paiement.

@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 cd ../../src
-python ./main.py
+./main.py
 read end

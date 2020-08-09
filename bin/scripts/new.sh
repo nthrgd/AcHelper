@@ -16,5 +16,5 @@ echo "Total;$dep" >> "$accounts_path/$filename.csv"
 
 cd ../../src
 echo "$filename.csv" > ../config/actfile.txt 
-python ./levy_manager.py
+./levy_manager.py
 echo "$filename.csv créé."
