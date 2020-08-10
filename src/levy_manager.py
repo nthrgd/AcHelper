@@ -7,7 +7,7 @@ from sort import sort_by_dates
 from refresh import refresh
 
 
-with open("../config/ACCOUNTS_PATH.txt", "r", encoding="utf-8") as _file:
+with open("../config/accounts_path.txt", "r", encoding="utf-8") as _file:
     accounts_path = _file.readline().strip("\n")
 levysfile = accounts_path + "/NE PAS SUPPRIMER/Prélèvements.txt"
 
