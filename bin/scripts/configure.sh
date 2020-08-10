@@ -19,4 +19,3 @@ mv Prelevements.md AidePrélèvements.md
 
 echo ""
 echo "Si aucun message d'erreur n'a été affiché, AcHelper est correctement configuré !"
-read end

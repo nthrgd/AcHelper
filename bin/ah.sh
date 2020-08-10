@@ -31,4 +31,6 @@ if [ "$op" == "v" -o "$op" == "version" ]; then
 	./version.sh
 fi
 
-read end
+if [ ! -e /usr/bin/python3 ]; then
+	read end
+fi
