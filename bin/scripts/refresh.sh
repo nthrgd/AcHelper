@@ -1,3 +1,7 @@
 #!/usr/bin/bash
 cd ../../src
-./refresh.py
+if [ -e /usr/bin/python3 ]; then    
+    ./refresh.py
+else
+    python ./refresh.py
+fi
