@@ -29,5 +29,7 @@ def whatop(seizure):
         return "modifier"
     elif op in ["voir", "v"]:
         return "voir"
+    elif op in ["sup", "supprimer"]:
+        return "supprimer"
     else:
         return "add"

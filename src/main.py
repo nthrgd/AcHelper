@@ -83,6 +83,46 @@ while line[0].lower() != "stop":
         else:
             operror("voir")
 
+    elif op == "supprimer":
+        if len(line) == 3:
+            if line[1].isdigit() and line[2].isdigit():
+                line[1], line[2] = int(line[1]), int(line[2])
+                if line[1] <= line[2]:
+                    len_list_accounts = len(list_accounts)
+                    list_accounts = delete(list_accounts, line[1], line[2])
+
+                    if line[2] > len_list_accounts:
+                        line[2] -= line[2] - len_list_accounts
+
+                    n -= line[2] - line[1] + 1
+
+                
+        elif len(line) == 2: 
+            if line[1].isdigit():
+                line[1] = int(line[1])
+                list_accounts = delete(list_accounts, line[1], line[1])
+                n -= 1
+
+        elif len(line) == 1:
+            print("Etes-vous sûr(e) de vouloir supprimer définitivement", 
+                  "toutes les données de votre tableau ? [O/N]")
+            if input().upper() in ["O", "OUI", "Y", "YES"]:
+                list_accounts = delete(list_accounts, 1, len(list_accounts))
+                n = 1
+            else:
+                print("Opération annulée.")
+        else:
+            operror("Supprimer")
+
+        if n > 1:
+            previous_settings = {
+                "amount": list_accounts[-1][2],
+                "mode": list_accounts[-1][1],
+                "date": list_accounts[-1][0]
+            }
+        else:
+            previous_settings = {}
+
     else:
         if len(line) == 2:
             if line[1].isdigit():

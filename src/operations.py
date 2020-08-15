@@ -2,7 +2,7 @@
 #_*_ coding: utf-8 -*-
 
 from what import whatis
-from copy import copy
+from copy import copy, deepcopy
 from date import Date
 from mode import Mode
 
@@ -146,3 +146,10 @@ def modify(list_accounts, index):
         ]
 
     return list_accounts
+
+
+
+def delete(list_accounts, start, end):
+    accounts = deepcopy(list_accounts)
+    del accounts[start - 1:end]
+    return accounts
