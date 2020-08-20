@@ -43,7 +43,7 @@ class Table:
         else:
             return False, error_msg
 
-        if table[1] != [""] or table[-2] != [""]:
+        if not (table[1] in [[""], []] and table[-2] in [[""], []]):
             return False, error_msg
 
         if len(table[2]) == 3:
