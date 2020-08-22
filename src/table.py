@@ -43,7 +43,7 @@ class Table:
         else:
             return False, error_msg
 
-        if not (table[1] in [[""], []] and table[-2] in [[""], []]):
+        if not (table[1] in [["", ""], [""], []] and table[-2] in [["", ""], [""], []]):
             return False, error_msg
 
         if len(table[2]) == 3:
@@ -54,7 +54,7 @@ class Table:
 
 
         # Test account lines
-        # We don't need to check if the order is respected because if it's not the case, 
+        # We don't need to check if the order is respected because if it's not the case,
         # the tests will not be passed and then the table will in any case be considered invalid.
         error_msg = "La ligne de compte numéro ? est invalide."
         for i in range(3, len(table) - 2):
@@ -69,7 +69,7 @@ class Table:
                         float(table[i][2])
                     except ValueError:
                         return False, error_msg.replace("?", str(i - 2))
-        
+
 
         return True, ""
 
@@ -79,10 +79,10 @@ class Table:
     def __init__(self, content):
         valid, error_msg = Table.isvalid(content)
         if valid:
-            self.all = content
-            self.starting = float(content[0][1])
-            self.total = float(content[-1][1])
-            self.accounts = content[3:len(content) - 2]
+            self.all = deepcopy(content)
+            self.starting = float(self.all[0][1])
+            self.total = float(self.all[-1][1])
+            self.accounts = self.all[3:len(self.all) - 2]
         else:
             print("Programme stoppé:", error_msg)
             sys.exit()
@@ -126,7 +126,7 @@ class Table:
         self.accounts = deepcopy(sorted_list)
         self.all[3:len(self.all) - 2] = self.accounts
 
-    
+
 
     def update_total(self):
         new_total = self.starting
@@ -140,7 +140,7 @@ class Table:
         self.total = round(new_total, 2)
         self.all[-1][1] = "{:.2f}".format(self.total)
 
-    
+
     def update(self):
         """
         Autocomplete, sort and recalcul the total of the table.
