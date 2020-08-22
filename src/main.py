@@ -3,21 +3,19 @@
 
 from what import *
 from operations import *
-from calcul import *
 from files import *
-from sort import *
+from table import Table
+from copy import deepcopy
 
 print("Entrez les montants, les dates et les modes de paiement dans l'ordre que vous voulez :\n")
 
 with open("../config/accounts_path.txt", "r", encoding="utf-8") as _file:
     actfile = _file.readline().strip("\n") + "/" + whatfile()
 
-list_accounts = reader(actfile) # lecture du fichier où se trouvent les comptes
+table = Table(reader(actfile)) # lecture du fichier où se trouvent les comptes
 
-# on ne garde que les lignes de 'comptes'
-dep = float(list_accounts.pop(0)[1])
-del list_accounts[:2]
-del list_accounts[len(list_accounts)-2:]
+list_accounts = deepcopy(table.accounts)
+dep = table.starting
 
 n = len(list_accounts) + 1
 
@@ -147,16 +145,9 @@ while line[0].lower() != "stop":
             line = ["_"]
 
 
+
 print("Traitement des changements en cours...")
-list_accounts = sort_by_dates(list_accounts)
-total = calcul_total(dep, list_accounts)
-
-# réinsertion du montant de départ et du montant total
-list_accounts.insert(len(list_accounts), ["", ""])
-list_accounts.insert(len(list_accounts), ["Total", "{:.2f}".format(total)])
-list_accounts[0:0] = [["Depart", "{:.2f}".format(dep)]]
-list_accounts[1:1] = [["", ""]]
-list_accounts[2:2] = [["Date", "Mode", "Montant"]]
-
-writer(actfile, list_accounts)
+table.accounts = list_accounts
+table.update()
+writer(actfile, table.all)
 print("Fait.")

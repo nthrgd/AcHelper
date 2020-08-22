@@ -3,7 +3,6 @@
 import files
 from date import Date
 from what import whatfile
-from sort import sort_by_dates
 from refresh import refresh
 
 

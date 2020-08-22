@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from what import whatfile
-from calcul import *
-from sort import *
+from table import Table
 import files
 
 def refresh(verbose=0):
@@ -13,11 +12,10 @@ def refresh(verbose=0):
     actfile = whatfile()
     filecontent = files.reader(accounts_path + actfile)
 
-    dep = float(filecontent[0][1])
-    filecontent[3:len(filecontent) - 2] = sort_by_dates(filecontent[3:len(filecontent) - 2])
-    filecontent[-1][1] = "{:.2f}".format(calcul_total(dep, filecontent[3:len(filecontent) - 2]))
-    files.writer(accounts_path + actfile, filecontent)
+    table = Table(filecontent)
+    table.update()
 
+    files.writer(accounts_path + actfile, table.all)
     if verbose:
         print(actfile, "mis à jour.")
 
