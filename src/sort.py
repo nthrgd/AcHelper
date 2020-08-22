@@ -18,7 +18,7 @@ def sort_by_dates(list_accounts):
             if date < date_min:
                 date_min = date
                 line_date_min = [d.value, m, a]
-                
+
         sorted_list.append(line_date_min)
         list_accounts.remove(line_date_min)
 

@@ -8,10 +8,10 @@ AcHelper
 AcHelper est un petit projet compatible avec Windows (bientôt GNU/Linux) ayant pour but d'aider ses utilisateurs à faire
 leurs comptes plus rapidement.
 
-Une des pricipales raisons de sa création est la volonté m'améliorer en programmation et tester des choses. 
+Une des pricipales raisons de sa création est la volonté m'améliorer en programmation et tester des choses.
 Cela n'empêche pas que AcHelper puisse être utile pour certains utilisateurs faisants encore leurs comptes.
 
-En effet, il contient plusieurs fonctionnalités utiles qui vous ferons gagner du temps. (Autocomplétion, Trie par date, 
+En effet, il contient plusieurs fonctionnalités utiles qui vous ferons gagner du temps. (Autocomplétion, Trie par date,
 correcteur automatique pour le mode de paiement, gestion automatique des prélevements, ...)
 
 
@@ -26,11 +26,11 @@ Plusieurs modes s'offrent à vous :
 
     - Rafraîchir (r, refresh) : Permet de rafraîchir le tableau le plus récent après une
                                 une modification 'directe' de celui-ci (par exemple).
-                                
+
     - Version (v, version) : Affiche la version de AcHelper que vous possédez.
 
 
-Les tableaux sont au format csv, ils pourront donc s'ouvrir avec un tableur pour une meilleure visibilité. (Si jamais vous modifiez le tableau par vous-même, 
+Les tableaux sont au format csv, ils pourront donc s'ouvrir avec un tableur pour une meilleure visibilité. (Si jamais vous modifiez le tableau par vous-même,
 assurez-vous de bien respecter le format qu'utilise AcHelper)
 
 

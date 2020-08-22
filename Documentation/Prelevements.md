@@ -15,7 +15,7 @@ indiquer plus de 1 prélèvement par ligne.
 (Il n'est pas nécéssaire d'indiquer les prélèvements dans l'ordre chronologique, il seront de toutes
 façon triés.)
 
-Voici une exemple : 
+Voici une exemple :
 
     5 : EDF : 200
     23 : Netflix : 13.99

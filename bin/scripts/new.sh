@@ -17,7 +17,7 @@ echo "Total,$dep" >> "$accounts_path/$filename.csv"
 cd ../../src
 echo "$filename.csv" > ../config/actfile.txt
 
-if [ -e /usr/bin/python3 ]; then    
+if [ -e /usr/bin/python3 ]; then
     ./levy_manager.py
 else
     python ./levy_manager.py
