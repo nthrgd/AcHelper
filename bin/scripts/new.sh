@@ -4,8 +4,24 @@ accounts_path=$(cat ../../config/accounts_path.txt)
 
 echo "Nom du nouveau fichier :"
 read filename
-echo "Montant de depart :"
-read dep
+
+dep=false
+
+if [ -e ../../config/actfile.txt ]; then
+    if [ -e $accounts_path/$(cat ../../config/actfile.txt) ]; then
+        line_last_total=$(cat $accounts_path/$(cat ../../config/actfile.txt) | grep Total)
+        if [ "$line_last_total" != "" ]; then
+            dep=${line_last_total:6}
+        fi
+    fi
+fi
+
+
+if [ "$dep" == "false" -o "$dep" == "" ]; then
+    echo "Montant de depart :"
+    read dep
+fi
+
 
 echo "Depart,$dep" > "$accounts_path/$filename.csv"
 echo "," >> "$accounts_path/$filename.csv"
