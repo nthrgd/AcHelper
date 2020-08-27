@@ -102,6 +102,8 @@ class Table:
 
         # Update self.all
         self.all[3:len(self.all) - 2] = self.accounts
+        self.all[0][0] = "Départ"
+        self.all[-1][0] = "Total"
 
 
 
